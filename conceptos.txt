@@ -1,0 +1,1 @@
+Se maneja async await, funciones flecha, se trabaja con MVC, conexión a bases de datos, manejo de archivos, manipulación del DOM, 
