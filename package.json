@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js",
-    "build": "handlebars -m src/views > dist/templates.js"
+    "build": "handlebars src/views -f dist/templates.js && mkdirp dist && xcopy /s /y src\\public\\* dist\\public\\ && xcopy /s /y src\\* dist\\"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.0.0",
     "fs-extra": "^11.1.1",
+    "handlebars": "^4.7.8",
     "md5": "^2.2.1",
     "moment": "^2.22.2",
     "mongoose": "^7.5.0",
