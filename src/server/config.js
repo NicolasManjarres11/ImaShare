@@ -32,6 +32,7 @@ module.exports = app => {
 
     app.use(morgan('dev'));
     app.use(multer({dest: path.join(__dirname, '../public/upload/temp')}).single('image'))
+    /* app.use(multer({dest: path.join(__dirname, 'mongodb+srv://nicolasadmin:soporte@imashare.yn3pkbz.mongodb.net/imashare/temp')}).single('image')) */
     app.use(express.urlencoded({extended: false})) //recepciópn de datos recibios por formularios (img)
     app.use(express.json());
     
