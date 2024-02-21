@@ -103,7 +103,7 @@ ctrl.comment = async (req, res) => {
 ctrl.remove = async (req, res) => {
     const image = await Image.findOne({filename: {$regex: req.params.images_id}}).lean();
     if (image){
-        await fs.unlink(path.resolve('./src/public/upload/' + image.filename))
+        await fs.unlink(path.resolve('src/public/upload/' + image.filename))
         await Comment.deleteOne({_id: image._id});
         await Image.deleteOne({_id: image._id});
         res.json(true);
