@@ -39,7 +39,7 @@ ctrl.create =  (req, res) => {
         console.log(imgUrl);
         const imageTempPath = req.file.path;
         const ext = path.extname(req.file.originalname).toLowerCase();
-        const targetPath = path.resolve(`/src/public/upload/${imgUrl}${ext}`);
+        const targetPath = path.resolve(`../src/public/upload/${imgUrl}${ext}`);
 
         if (ext === '.jpg' || ext === '.jpeg' || ext === '.png' || ext === '.gif' || ext === '.webp') {
             await fs.rename(imageTempPath, targetPath); //rename lo que hace es un proceso de cortar y pegar
@@ -103,7 +103,7 @@ ctrl.comment = async (req, res) => {
 ctrl.remove = async (req, res) => {
     const image = await Image.findOne({filename: {$regex: req.params.images_id}}).lean();
     if (image){
-        await fs.unlink(path.resolve('/src/public/upload/' + image.filename))
+        await fs.unlink(path.resolve('../src/public/upload/' + image.filename))
         await Comment.deleteOne({_id: image._id});
         await Image.deleteOne({_id: image._id});
         res.json(true);

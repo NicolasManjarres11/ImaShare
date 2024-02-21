@@ -31,7 +31,7 @@ module.exports = app => {
     //middlewares
 
     app.use(morgan('dev'));
-    app.use(multer({dest: path.join(__dirname, '/public/upload/temp')}).single('image'))
+    app.use(multer({dest: path.join(__dirname, '../public/upload/temp')}).single('image'))
     app.use(express.urlencoded({extended: false})) //recepciópn de datos recibios por formularios (img)
     app.use(express.json());
     
