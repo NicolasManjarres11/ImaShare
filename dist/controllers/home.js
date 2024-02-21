@@ -23,7 +23,8 @@ ctrl.index = async (req, res, index) => {
         console.log(viewModel.sidebar.comments[0].image);
         res.render("index", viewModel);
       } catch (error) {
-        next(error);
+        /* next(error); */
+        console.error(error);
       }
 };
 
