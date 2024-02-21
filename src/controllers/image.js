@@ -39,7 +39,7 @@ ctrl.create =  (req, res) => {
         console.log(imgUrl);
         const imageTempPath = req.file.path;
         const ext = path.extname(req.file.originalname).toLowerCase();
-        const targetPath = path.resolve(`src/public/upload/${imgUrl}${ext}`); 
+        const targetPath = path.resolve(`./src/public/upload/${imgUrl}${ext}`); 
         /* const targetPath = path.resolve(`mongodb+srv://nicolasadmin:soporte@imashare.yn3pkbz.mongodb.net/imashare/temp/${imgUrl}${ext}`); */
 
         if (ext === '.jpg' || ext === '.jpeg' || ext === '.png' || ext === '.gif' || ext === '.webp') {
